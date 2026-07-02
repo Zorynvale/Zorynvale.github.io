@@ -541,6 +541,80 @@ a {
   margin: 0;
 }
 
+.app-policy-page {
+  background: linear-gradient(180deg, #17191f 0%, #242833 100%);
+  min-height: 100vh;
+  padding: clamp(8.5rem, 18vh, 12rem) clamp(1.25rem, 5vw, 4rem) 4rem;
+  position: relative;
+}
+
+.app-policy-page__logo {
+  display: block;
+  filter: saturate(1.04);
+  left: 50%;
+  max-width: min(34vw, 180px);
+  position: absolute;
+  top: clamp(1.25rem, 4vh, 2rem);
+  transform: translateX(calc(-50% + 8px));
+  width: 100%;
+}
+
+.app-policy-page__content {
+  color: var(--muted);
+  font-size: clamp(0.96rem, 1.45vw, 1.08rem);
+  line-height: 1.58;
+  margin: 0 auto;
+  max-width: min(90vw, 54rem);
+}
+
+.app-policy-page__header {
+  text-align: center;
+}
+
+.app-policy-page h1 {
+  color: rgba(245, 247, 251, 0.92);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.6vw, 4rem);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.app-policy-page__header p {
+  margin: 1rem 0 0;
+}
+
+.app-policy-page section {
+  border-top: 1px solid rgba(245, 247, 251, 0.12);
+  margin-top: clamp(1.2rem, 3vw, 1.7rem);
+  padding-top: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.app-policy-page h2 {
+  color: rgba(245, 247, 251, 0.9);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  font-weight: 400;
+  margin: 0 0 0.45rem;
+}
+
+.app-policy-page p {
+  margin: 1rem 0 0;
+}
+
+.app-policy-page ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.8rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.app-policy-page__copyright {
+  color: rgba(245, 247, 251, 0.58);
+  margin-top: clamp(1.4rem, 3vw, 2rem);
+  text-align: center;
+}
+
 @media (max-width: 720px) {
   .intro__mark {
     width: min(86vw, 520px);
