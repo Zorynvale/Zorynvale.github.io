@@ -1,0 +1,4 @@
+Contact: mailto:support@zorynvale.com
+Expires: 2027-07-02T00:00:00Z
+Preferred-Languages: en
+Canonical: https://zorynvale.com/.well-known/security.txt
