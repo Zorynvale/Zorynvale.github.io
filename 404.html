@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="The page you are looking for could not be found."
+    >
+    <title>Page Not Found | Zorynvale Digital</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <meta name="theme-color" content="#17191f">
+    <link rel="stylesheet" href="styles.css?v=23">
+  </head>
+  <body class="page-body not-found-body">
+    <main class="not-found-page" data-pointer-page>
+      <a href="index.html" aria-label="Zorynvale Digital home">
+        <img
+          src="zorynvale%20logos/logo-transparent.png"
+          alt="Zorynvale Digital"
+          class="not-found-page__logo"
+        >
+      </a>
+
+      <section class="not-found-page__content" aria-labelledby="not-found-title">
+        <p class="not-found-page__code">404</p>
+        <h1 id="not-found-title">Page not found</h1>
+        <p>
+          The page you are looking for is not here.
+        </p>
+        <div class="not-found-page__links" aria-label="Page options">
+          <a href="index.html">Home</a>
+          <a href="support.html">Support</a>
+        </div>
+      </section>
+
+      <p class="not-found-page__footer">&copy; 2026 Zorynvale Digital</p>
+    </main>
+
+    <script>
+      const reactivePage = document.querySelector("[data-pointer-page]");
+
+      function moveField(event) {
+        const point = event.touches ? event.touches[0] : event;
+        const x = point.clientX / window.innerWidth;
+        const y = point.clientY / window.innerHeight;
+        const driftX = (x - 0.5) * 48;
+        const driftY = (y - 0.5) * 34;
+        const angle = -18 + x * 28;
+        const lineOpacity = 0.22 + y * 0.18;
+        const textureOpacity = 0.16 + (1 - y) * 0.12;
+
+        reactivePage.style.setProperty("--field-x", `${driftX.toFixed(2)}px`);
+        reactivePage.style.setProperty("--field-y", `${driftY.toFixed(2)}px`);
+        reactivePage.style.setProperty("--field-x-soft", `${(driftX * 0.8).toFixed(2)}px`);
+        reactivePage.style.setProperty("--field-y-soft", `${(driftY * 0.6).toFixed(2)}px`);
+        reactivePage.style.setProperty("--field-x-negative", `${(-driftX).toFixed(2)}px`);
+        reactivePage.style.setProperty("--field-y-negative", `${(-driftY).toFixed(2)}px`);
+        reactivePage.style.setProperty("--field-angle", `${angle.toFixed(2)}deg`);
+        reactivePage.style.setProperty("--line-opacity", lineOpacity.toFixed(3));
+        reactivePage.style.setProperty("--texture-opacity", textureOpacity.toFixed(3));
+      }
+
+      window.addEventListener("pointermove", moveField);
+      window.addEventListener("touchmove", moveField, { passive: true });
+    </script>
+  </body>
+</html>
