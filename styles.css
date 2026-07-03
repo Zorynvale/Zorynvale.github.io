@@ -544,7 +544,7 @@ a {
 .app-policy-page {
   background: linear-gradient(180deg, #17191f 0%, #242833 100%);
   min-height: 100vh;
-  padding: clamp(8.5rem, 18vh, 12rem) clamp(1.25rem, 5vw, 4rem) 4rem;
+  padding: clamp(11rem, 24vh, 15rem) clamp(1.25rem, 5vw, 4rem) 4rem;
   position: relative;
 }
 
@@ -579,6 +579,10 @@ a {
   line-height: 1.05;
   margin: 0;
   white-space: nowrap;
+}
+
+.app-policy-page--mimir h1 {
+  font-size: 2.6rem;
 }
 
 .app-policy-page__header p {
@@ -628,6 +632,26 @@ a {
     width: min(86vw, 520px);
   }
 
+  .home {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .home__hero {
+    min-height: 100svh;
+  }
+
+  @supports (height: 100dvh) {
+    .home {
+      height: 100dvh;
+      min-height: 100dvh;
+    }
+
+    .home__hero {
+      min-height: 100dvh;
+    }
+  }
+
   .home__logo {
     max-width: min(76vw, 420px);
   }
@@ -638,6 +662,61 @@ a {
 
   .home h1 span {
     white-space: normal;
+  }
+
+  .home__footer {
+    align-items: center;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 0.9rem);
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.55rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .home__footer-links {
+    flex: 0 0 auto;
+    gap: 0.55rem;
+  }
+
+  .home__footer p {
+    flex: 0 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .support-page {
+    align-items: start;
+    min-height: 100svh;
+    padding: 14rem clamp(1.25rem, 6vw, 2rem) 3rem;
+  }
+
+  .support-page__logo {
+    max-width: min(42vw, 160px);
+    top: 1.35rem;
+  }
+
+  .support-page__content,
+  .privacy-page__content {
+    max-width: min(90vw, 52rem);
+    padding-top: 0;
+  }
+
+  .privacy-page__content h1 {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+  }
+
+  .privacy-page__contact {
+    overflow-wrap: anywhere;
+  }
+
+  .support-page__footer {
+    align-self: end;
+    bottom: auto;
+    left: auto;
+    margin-top: 2.5rem;
+    position: static;
+    right: auto;
   }
 
   .downloads-body {
@@ -701,17 +780,29 @@ a {
   .app-policy-page h1 {
     font-size: 1.65rem;
   }
+
+  .app-policy-page--mimir h1 {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 420px) {
   .app-policy-page h1 {
     font-size: 1.28rem;
   }
+
+  .app-policy-page--mimir h1 {
+    font-size: 0.78rem;
+  }
 }
 
 @media (max-width: 340px) {
   .app-policy-page h1 {
     font-size: 1.12rem;
+  }
+
+  .app-policy-page--mimir h1 {
+    font-size: 0.68rem;
   }
 }
 
