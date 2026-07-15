@@ -830,20 +830,14 @@ a {
 .mimir-hero {
   align-items: center;
   display: grid;
-  gap: clamp(2rem, 4.5vw, 4.5rem);
+  gap: clamp(2.5rem, 5vw, 6rem);
   grid-template-columns: minmax(0, 1fr) auto;
   margin: 0 auto;
-  max-width: 78rem;
+  max-width: 100rem;
 }
 
 .mimir-hero__copy {
-  max-width: 40rem;
-}
-
-.mimir-eyebrow {
-  color: var(--muted);
-  font-size: clamp(0.86rem, 1.5vw, 1rem);
-  margin: 0 0 0.6rem;
+  max-width: 46rem;
 }
 
 .mimir-page h1 {
@@ -948,7 +942,7 @@ a {
 }
 
 .mimir-gallery {
-  --phone-width: clamp(17rem, 32vw, 26rem);
+  --phone-width: clamp(18rem, 34vw, 34rem);
   display: grid;
   gap: clamp(1rem, 2.4vw, 1.5rem);
   justify-items: center;
@@ -1104,7 +1098,7 @@ a {
   border-style: solid;
   border-width: 1px 0 0;
   margin: clamp(3rem, 7vw, 5rem) auto 0;
-  max-width: 74rem;
+  max-width: 100rem;
   padding-top: clamp(2rem, 4vw, 3rem);
 }
 
@@ -1114,7 +1108,7 @@ a {
 
 .mimir-detail .mimir-list--grid {
   gap: 0.7rem clamp(1.5rem, 4vw, 3rem);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
   margin-top: clamp(1.1rem, 2.4vw, 1.5rem);
 }
 
@@ -1122,8 +1116,9 @@ a {
   color: rgba(245, 247, 251, 0.5);
   font-size: clamp(0.84rem, 1.3vw, 0.95rem);
   line-height: 1.55;
-  margin: clamp(2.4rem, 5vw, 3.5rem) 0 0;
+  margin: clamp(2.4rem, 5vw, 3.5rem) auto 0;
   max-width: 46rem;
+  text-align: center;
 }
 
 .mimir-page__footer {
@@ -1154,6 +1149,18 @@ a {
 }
 
 @media (max-width: 900px) {
+  /* Single-column: nav and logo share the top, so drop the logo below the
+     nav and start the content well below the logo to avoid any overlap. */
+  .mimir-page {
+    padding-top: 17rem;
+  }
+
+  /* Higher specificity so this wins over the shared `.support-page__logo`
+     top rule in the max-width:720px block that follows in source order. */
+  .mimir-page .mimir-page__logo {
+    top: 4.5rem;
+  }
+
   .mimir-hero {
     gap: clamp(2.25rem, 6vw, 3rem);
     grid-template-columns: 1fr;
@@ -1189,6 +1196,12 @@ a {
   }
 
   .mimir-detail {
+    text-align: left;
+  }
+
+  .mimir-disclaimer {
+    margin-left: 0;
+    margin-right: 0;
     text-align: left;
   }
 }
